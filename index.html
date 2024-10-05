@@ -3,10 +3,69 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
     <title>Library | The Odin Project</title>
   </head>
   <body>
-    <script src="./index.js" />
+    <aside class="aside">
+      <div class="aside__header">
+        <span class="material-symbols-outlined header__icon"> book_5 </span>
+        <h1 class="header__title">Library</h1>
+      </div>
+      <form class="add-book__form" id="add-book">
+        <div class="form__inputs">
+          <div class="form__input-container">
+            <label for="title" class="form__label">Title</label
+            ><input
+              type="text"
+              id="title"
+              name="title"
+              class="form__input"
+              required
+            />
+          </div>
+          <div class="form__input-container">
+            <label for="author" class="form__label">Author</label
+            ><input
+              type="text"
+              id="author"
+              name="author"
+              class="form__input"
+              required
+            />
+          </div>
+          <div class="form__input-container">
+            <label for="pages" class="form__label">Pages</label
+            ><input type="number" id="pages" name="pages" class="form__input" />
+          </div>
+          <div class="form__input-container">
+            <label for="is-read" class="form__label">Is read?</label
+            ><input
+              type="checkbox"
+              id="is-read"
+              name="is-read"
+              class="form__input"
+            />
+          </div>
+        </div>
+        <button class="form__button" type="submit">Add book</button>
+      </form>
+    </aside>
+    <main class="library">
+      <h2 class="library__title">My Books</h2>
+      <table class="library__table" id="table">
+        <tr>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Pages</th>
+          <th>Is read?</th>
+        </tr>
+      </table>
+    </main>
+    <script src="index.js"></script>
   </body>
 </html>
