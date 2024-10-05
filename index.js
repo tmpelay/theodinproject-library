@@ -8,14 +8,25 @@ function updateTable() {
     "<tr><th>Title</th><th>Author</th><th>Pages</th><th>Is read?</th></tr>";
   if (myLibrary.length != 0) {
     const tableContent = document.createDocumentFragment();
-    myLibrary.forEach((value) => {
+    myLibrary.forEach((value, index) => {
+      const removeButton = document.createElement("button");
+      removeButton.innerText = "Remove book";
+      removeButton.className = "table__remove-btn";
+      removeButton.onclick = () => {
+        myLibrary.splice(index, 1);
+        updateTable();
+      };
       const tableRow = document.createElement("tr");
-      const title = document.createElement("td");
+      const titleCell = document.createElement("td");
+      const title = document.createElement("p");
       const author = document.createElement("td");
       const pages = document.createElement("td");
       const isRead = document.createElement("td");
       title.innerText = value.title;
-      tableRow.appendChild(title);
+      titleCell.appendChild(title);
+      titleCell.appendChild(removeButton);
+      titleCell.className = "table__title-cell";
+      tableRow.appendChild(titleCell);
       author.innerText = value.author;
       tableRow.appendChild(author);
       pages.innerText = value.pages;
@@ -51,6 +62,27 @@ function addBookToLibrary(title, author, pages, isRead) {
 
 myLibrary[0] = new Book(
   "Harry Potter and the Philosopher's Stone",
+  "J. K. Rowling",
+  223,
+  true
+);
+
+myLibrary[1] = new Book(
+  "Harry Potter and the Philosopher's Stone1",
+  "J. K. Rowling",
+  223,
+  true
+);
+
+myLibrary[2] = new Book(
+  "Harry Potter and the Philosopher's Stone2",
+  "J. K. Rowling",
+  223,
+  true
+);
+
+myLibrary[3] = new Book(
+  "Harry Potter and the Philosopher's Stone3",
   "J. K. Rowling",
   223,
   true

@@ -103,3 +103,33 @@ td {
 .library__table tr:nth-child(even) {
   background-color: #fafafa;
 }
+
+.table__title-cell {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.table__remove-btn {
+  padding: 8px;
+  background-color: #fafafa;
+  border: 2px solid #05050566;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.table__remove-btn:nth-child(even) {
+  background-color: #ededed;
+}
+
+.table__remove-btn:hover {
+  background-color: transparent;
+}
+
+.table__remove-btn:nth-child(even):hover {
+  background-color: #fafafa;
+}
+
+.table__remove-btn:active {
+  background-color: #ababab;
+}
